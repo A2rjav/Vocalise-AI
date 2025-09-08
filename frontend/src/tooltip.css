@@ -1,0 +1,279 @@
+.tooltip {
+  position: absolute;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 100;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.tooltip.top::after {
+  top: auto;
+  bottom: 100%;
+  border-color: transparent transparent var(--primary-color) transparent;
+}
+
+.tooltip.left::after {
+  top: 50%;
+  left: 100%;
+  margin-top: -8px;
+  margin-left: 0;
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+.tooltip.right::after {
+  top: 50%;
+  left: auto;
+  right: 100%;
+  margin-top: -8px;
+  border-color: transparent var(--primary-color) transparent transparent;
+}
+
+/* Feature spotlight */
+.spotlight {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spotlight-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.spotlight-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.spotlight-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.spotlight-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spotlight-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Hint indicators */
+.hint-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  z-index: 10;
+}
+
+/* Guided tour */
+.tour-step {
+  position: fixed;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 1000;
+}
+
+.tour-step-content {
+  margin-bottom: 15px;
+}
+
+.tour-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.tour-description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tour-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tour-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tour-button.next {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tour-button.prev {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.tour-button.close {
+  background-color: var(--gray-color);
+  color: white;
+}
+
+.tour-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.tour-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gray-color);
+}
+
+.tour-dot.active {
+  background-color: var(--primary-color);
+}
+
+/* Floating help button */
+.help-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.help-button:hover {
+  transform: scale(1.1);
+}
+
+/* Notification system with multiple types */
+:root {
+  --success-bg: var(--success-color);
+  --error-bg: var(--error-color);
+  --warning-bg: #F59E0B;
+  --info-bg: #3B82F6;
+}
+
+.success-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--success-bg);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  transform: translateX(120%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Notification types */
+.success-notification[data-type="error"] {
+  background-color: var(--error-bg);
+}
+
+.success-notification[data-type="warning"] {
+  background-color: var(--warning-bg);
+}
+
+.success-notification[data-type="info"] {
+  background-color: var(--info-bg);
+}
+
+.success-notification.visible {
+  transform: translateX(0);
+}
+
+.success-notification-icon {
+  font-size: 20px;
+}
+
+.success-notification-message {
+  font-weight: 500;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="46" fill="#6C63FF" />
+  
+  <!-- Sound Waves -->
+  <path d="M75,50 C75,52.5 73,55 69,55 C65,55 63,52.5 63,50 C63,47.5 65,45 69,45 C73,45 75,47.5 75,50" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <path d="M83,50 C83,55 79,60 69,60 C59,60 55,55 55,50 C55,45 59,40 69,40 C79,40 83,45 83,50" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <path d="M91,50 C91,57.5 85,65 69,65 C53,65 47,57.5 47,50 C47,42.5 53,35 69,35 C85,35 91,42.5 91,50" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  
+  <!-- Microphone -->
+  <rect x="28" y="28" width="14" height="26" rx="7" fill="#FFFFFF" />
+  <path d="M22,50 C22,50 22,60 35,60 C48,60 48,50 48,50" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <line x1="35" y1="60" x2="35" y2="70" stroke="#FFFFFF" stroke-width="3" />
+  <line x1="25" y1="70" x2="45" y2="70" stroke="#FFFFFF" stroke-width="3" />
+</svg>

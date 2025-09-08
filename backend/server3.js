@@ -18,7 +18,10 @@ console.log('Environment variables loaded successfully');
 
 // Initialize Express app
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://a2rjav.github.io'],
+    credentials: true
+}));
 app.use(express.json());
 
 // Initialize AI models (disabled for testing)
